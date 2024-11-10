@@ -3,7 +3,7 @@ name: Generate Documentation
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   generate-doc:
     runs-on: ubuntu-latest
