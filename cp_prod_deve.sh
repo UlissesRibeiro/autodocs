@@ -26,4 +26,4 @@ caminho_arquivo=$(echo "$caminho_arquivo" | tr -s ' ' | xargs)
     fi
 done < "$lista"
 
-#jesus
+# PAZ
