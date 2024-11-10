@@ -25,3 +25,5 @@ caminho_arquivo=$(echo "$caminho_arquivo" | tr -s ' ' | xargs)
         echo "Arquivo não encontrado: $caminho_arquivo" >> nao_encontrado.log
     fi
 done < "$lista"
+
+# Duvidas procurar o time de infraestrutura!
