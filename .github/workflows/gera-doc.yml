@@ -1,0 +1,29 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  generate-doc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+      - name: Run documentation generation script
+        run: |
+          git clone git@github.com:UlissesRibeiro/documentoso.git
+          cd documentoso
+          chmod +x generate_docs.sh
+          ./generate_docs.sh
+      - name: Commit and push documentation
+        run: |
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add DOCUMENTATION.md
+          git commit -m "Update documentation"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
