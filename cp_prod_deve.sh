@@ -1,6 +1,6 @@
 #!/bin/bash
-## Scritp para copiar arquivos do storage-prod para storage-deve
-# Uso ./cp_prod_deve.sh arquivo_lista.txt entidade_destino
+## Scritp para copiar arquivos do storage-prod para storage-deve.
+# Uso ./cp_prod_deve.sh arquivo_lista.txt entidade_destin .
 if [ "$#" -ne 2 ]; then
     echo "Uso: $0 <arquivo_lista> <entidade>"
     exit 1
@@ -9,7 +9,7 @@ fi
 lista=$1
 entidade_destino=$2
 
-# O script vai ler a lista com os paths dos arquivos, e para cada linha de arquivo.
+# O script vai ler a lista com os paths dos arquivos, e para cada linha de arquivo,
 # será feito um scp para o storage destino, no path especificado.
 # Gerando logs referente a transferencias com sucesso e erros caso exista.
 while read -r caminho_arquivo; do
