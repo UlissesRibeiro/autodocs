@@ -13,8 +13,8 @@ jobs:
 
       - name: Run documentation generation script
         run: |
-          git clone git@github.com:UlissesRibeiro/documentoso.git
-          cd documentoso
+          #git clone git@github.com:UlissesRibeiro/documentoso.git
+          #cd documentoso
           chmod +x generate_docs.sh
           ./generate_docs.sh
       - name: Commit and push documentation
