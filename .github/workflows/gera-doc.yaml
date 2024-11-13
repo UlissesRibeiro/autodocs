@@ -13,9 +13,24 @@ jobs:
 
       - name: Run documentation generation script
         run: |
-          wget https://raw.githubusercontent.com/UlissesRibeiro/documentoso/refs/heads/main/generate_docs.sh
-          chmod +x generate_docs.sh
-          ./generate_docs.sh
+          output="REAMDE.md"
+          echo "# Documentação dos Scripts" > "$output"
+
+          #for script in *.sh; do
+            # Ignora o script generate_docs.sh
+          #  if [[ "$script" == "generate_docs.sh" ]]; then
+          #    continue
+          #  fi
+
+            echo "## $(basename "$script")" >> "$output"
+            grep '^#' "$script" | sed 's/^# //' >> "$output"
+            echo -e "\n---\n" >> "$output"
+          done
+
+          echo "Documentação gerada em $output."
+          #wget https://raw.githubusercontent.com/UlissesRibeiro/documentoso/refs/heads/main/generate_docs.sh
+          #chmod +x generate_docs.sh
+          #./generate_docs.sh
       - name: Commit and push documentation
         run: |
           git config --local user.name "github-actions"
