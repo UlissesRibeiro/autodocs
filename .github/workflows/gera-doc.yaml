@@ -16,7 +16,7 @@ jobs:
           output="REAMDE.md"
           echo "# Documentação dos Scripts" > "$output"
 
-          #for script in *.sh; do
+          for script in *.sh; do
             # Ignora o script generate_docs.sh
           #  if [[ "$script" == "generate_docs.sh" ]]; then
           #    continue
