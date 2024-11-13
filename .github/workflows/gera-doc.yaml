@@ -13,7 +13,7 @@ jobs:
 
       - name: Run documentation generation script
         run: |
-          output="REAMDE.md"
+          output="README.md"
           echo "# Documentação dos Scripts" > "$output"
 
           for script in *.sh; do
